@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="document.css">
+  <title>Document Upload</title>
+  <style>
+
+    .document-container {
+      margin-bottom: 20px;
+    }
+    
+    .document-container label {
+      color: #333;
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .document-container input[type="file"] {
+      margin-bottom: 10px;
+    }
+    
+    .document-container .logo {
+      max-width: 50px;
+      height: auto;
+      margin-left: 10px;
+    }
+    
+    /* Rest of your CSS styles */
+    
+      </style>
+</head>
+<body>
+    <h1>Document Upload</h1>
+  <form id="uploadForm">
+    <div class="document-container">
+      <label for="feeReceipt">Fee Receipt (PNG only):</label>
+      <input type="file" id="feeReceipt" accept=".png" required>
+      <img src="feereceipt.jpg" alt="Logo" class="logo">
+    </div>
+    
+    <div class="document-container">
+      <label for="aadhaarCard">Aadhaar Card (PNG only):</label>
+      <input type="file" id="aadhaarCard" accept=".png" required>
+      <img src="aadar.jpg" alt="Logo" class="logo">
+    </div>
+
+    <div class="document-container">
+        <label for="registrationform">Registration Form (PNG only):</label>
+        <input type="file" id="registrationform" accept=".png" required>
+        <img src="regis.jpg" alt="Logo" class="logo">
+      </div>
+
+      <div class="document-container">
+        <label for="messrecipt">Mess Recipt (PNG only):</label>
+        <input type="file" id="messrecipt" accept=".png" required>
+        <img src="regis.jpg" alt="Logo" class="logo">
+      </div>
+  
+  
+    <button type="submit">Upload Documents</button>
+  </form>
+
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const feeReceiptFile = document.getElementById('feeReceipt').files[0];
+      const aadhaarCardFile = document.getElementById('aadhaarCard').files[0];
+      const registrationFormFile = document.getElementById('registrationForm').files[0];
+      const messReceiptFile = document.getElementById('messReceipt').files[0];
+
+      const files = [feeReceiptFile, aadhaarCardFile, registrationFormFile, messReceiptFile];
+
+      displayUploadedFiles(files);
+    });
+
+    function displayUploadedFiles(files) {
+      const fileList = document.getElementById('fileList');
+      fileList.innerHTML = '';
+
+      files.forEach(file => {
+        if (file) {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${file.name} - ${formatFileSize(file.size)}`;
+          fileList.appendChild(listItem);
+        }
+      });
+    }
+
+    function formatFileSize(size) {
+      if (size === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+      const i = Math.floor(Math.log(size) / Math.log(k));
+      return parseFloat((size / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+  </script>
+</body>
+</html>

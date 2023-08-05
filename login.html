@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400&family=Bruno+Ace+SC&family=Prata&display=swap');
+    body{
+     margin: 0;
+     
+    }
+    html {
+      font-size: 16px;
+      
+      font-family: 'Prata', serif, Courier, monospace;
+  }
+   .outer-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(226, 231, 234);
+    height: 100vh;
+   }
+
+   .inner-container{
+    height: 92vh;
+    width: 95%;
+    border-radius: 0.8rem;
+    background-color: #ffffff;
+    background-image: linear-gradient(-143.7deg, #c794c5 0%, #5899e2 74%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .role-div-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 2rem;
+    max-width: 90%;
+   }
+   .role-div{
+    background: white;
+    border: 0.05rem solid blue;
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+   }
+
+   .role-div:hover{
+    transform: scale(1.05);
+   }
+   .role-logo{
+    padding: 0.4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 20vh;
+   }
+
+   .login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.login-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    gap: 1rem;
+    align-items: center;
+    color: white;
+    background-color: #5899e2;
+    border: 0.25rem solid white;
+}
+
+
+#close{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+#top-logo{
+  
+  padding: 0.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 10vh;
+
+}
+
+#submit{
+  border-radius: 0.1rem;
+  padding: 0.3rem;
+  background: white;
+  border: none;
+}
+
+   </style>
+</head>
+
+<body>
+  <div class="outer-container">
+
+    <div class="inner-container">
+      <h1>Welcome to Login Portal</h1>
+      <h3>Login as</h3>
+      <div class="role-div-container">
+        <div class="role-div" id="warden">
+          <img class="role-logo" src="/images/warden1.png" alt="">
+          <p>Warden</p>
+        </div>
+
+        <div class="role-div" id="staff">
+          <img  class="role-logo" src="/images/staff.png". alt="">
+          
+          <p>Staff</p>
+        </div>
+
+        <div class="role-div" id="student">
+          <img  class="role-logo" src="/images/student.jpeg" alt="">
+          <p>Student</p>
+        </div>
+     
+       
+  
+  </div>
+
+  <div class="login-modal" id="loginModal">
+    <div class="login-form">
+        <img id="top-logo" src="/resources/staff.png" alt="">
+        <h2>Login</h2>
+        <p>You are logging in as <span id="role"></span></p>
+        <label for="username">Username:</label>
+        <input type="email" id="username">
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <button id="submit" onclick="login()">Submit</button>
+        <button id="close" onclick="closeModal()">X</button>
+    </div>
+</div>
+
+<script>
+  const modal = document.getElementById('loginModal');
+  const openModalDiv1 = document.getElementById('warden');
+  const openModalDiv2 = document.getElementById('staff');
+  const openModalDiv3 = document.getElementById('student');
+
+  // Function to open the login modal
+  function openModal1() {
+      modal.style.display = 'block';
+      document.getElementById('role').innerHTML = "warden";
+      document.getElementById('top-logo').src = "/resources/warden1.png" ;
+  }
+  function openModal2() {
+    modal.style.display = 'block';
+    document.getElementById('role').innerHTML = "Staff";
+    document.getElementById('top-logo').src = "/resources/staff.png";
+}
+function openModal3() {
+  modal.style.display = 'block';
+  document.getElementById('role').innerHTML = "student";
+  document.getElementById('top-logo').src = "/resources/student.jpeg";
+}
+
+  // Function to close the login modal
+  function closeModal() {
+      modal.style.display = 'none';
+  }
+
+  // Attach click event to the div to open the modal
+  openModalDiv1.addEventListener('click', openModal1);
+  openModalDiv2.addEventListener('click', openModal2);
+  openModalDiv3.addEventListener('click', openModal3);
+
+  // Function to handle login form submission
+  function login() {
+      // Add your login logic here
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      console.log('Username:', username);
+      console.log('Password:', password);
+
+      if (openModal1) {
+    // Redirect to another page
+    goToPage('warden.html');
+  } 
+   if(openModal2){
+    goToPage('staff.html');
+
+  }
+   if(openModal3){
+    goToPage('student.html');
+
+  }
+  else {
+    // Handle unsuccessful login
+    alert('Login failed. Please try again.');
+  }
+}
+
+function goToPage(pageUrl) {
+  window.location.href = pageUrl;
+
+      // For this example, we will simply close the modal after submission
+      closeModal();
+  }
+
+  
+  
+</script>
+ 
+</body>
+
+</html>

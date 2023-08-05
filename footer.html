@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        footer{
+    width: 100%;
+    /* height: 340px; */
+    background-color: #3595dd;
+}
+
+.footer-content{
+    display: flex; 
+    flex-flow: row; 
+    height: 250px;
+    width : 1096px;
+
+} 
+
+.footer-content .col{
+    display: flex;
+    flex-flow: column;
+    max-width: 500px;
+    margin: 10px;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+
+.footer-content .col .title{
+    font-size: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-size-adjust: bold;
+    margin: 20px;
+}
+.footer-content .col .icons :hover{
+    color: orange;
+}
+
+.footer-content .col .icons{
+    margin: 20px;
+}
+.footer-content .col .icons a{
+    margin: 10px;
+}
+
+.fa{
+    font-size: 25px;
+
+}
+.footer-content .col .text{
+    font-size: 15px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefefe;    
+    padding: 5px;
+}
+
+@media only screen and (max-width: 900px) {
+    .footer-content{
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+   
+}
+    </style>
+
+
+<link rel= "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="col">
+                <div class="title">Social</div>
+                <div class="icons">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+           
+            <div class="col">
+                <div class="title">Developed by</div>
+                <div class="text"><a href="contact.html">Team members</a></div>
+            </div>
+            
+
+
+    </footer>
+
+
+    <button type="button" onclick="clickHandler()">Click Me!</button>
+    <script>
+        function clickHandler() {
+     
+
+</body>
+</html>

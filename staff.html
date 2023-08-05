@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="staff.css">
+</head>
+<body>
+    <header>
+        
+        <div class="logo">
+            <h1 class="header-logo">STAFF PORTAL</h1>
+    </header>
+
+    <main>
+       
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#room_allocation">Student Data</a></li>
+                <li><a href="#document_submission">Complaints by students</a></li>
+                <li><a href="#no_dues">Announcements/Notice</a></li>
+                <li><a href="fees.html">Mess Fees Forms data</a></li>
+                <li><a href="#complaints">Room Allocation Data</a></li>
+                <li><a href="home.html">Logout</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <section id="home">
+                <h2>Welcome to Staff Portal</h2>
+                <p>
+                    Welcome to our student portal, your one-stop destination for all your academic needs. 
+                    Use the navigation links to access different features and services provided by the portal.
+                </p>
+            </section>
+
+            <section id="Student Data">
+                <h2>Student Data</h2>
+               
+            </section>
+
+            <section id="Room Allocation Data">
+                <h2>Room Allocation Data</h2>
+                <!-- Your document submission content here -->
+            </section>
+
+            <section id="Announcements/Notice">
+                <h2>Announcements/Notice</h2>
+                <!-- Your no dues content here -->
+            </section>
+
+            <section id="Mess Fees Forms data">
+                <h2>Mess Fees Forms data</h2>
+                <!-- Your mess fees content here -->
+            </section>
+
+            <section id="Complaints by students">
+                <h2>Complaints by students</h2>
+                <p>
+                    Have a complaint or an issue you want to report? Please fill out the form below, and we'll address it as soon as possible.
+                </p>
+                <form>
+                    <div>
+                        <label for="complaint_subject">Subject:</label>
+                        <input type="text" id="complaint_subject" required>
+                    </div>
+                    <div>
+                        <label for="complaint_description">Description:</label>
+                        <textarea id="complaint_description" required></textarea>
+                    </div>
+                    <button type="submit">Submit Complaint</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Student Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,257 @@
+* {
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  
+  .alumni_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #033b69;
+  }
+  
+  h3 {
+    color: coral;
+    font-weight: 500;
+    padding: 4px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .alumni_container {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+  }
+  
+  .flip-box {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+    margin: 15px;
+    border-radius: 15px;
+    margin-top: 30px;
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .alumni_info {
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+  }
+  
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-box-front,
+  .flip-box-back {
+    border-radius: 15px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-box-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-box-back {
+    background-color: rgb(59 130 246 / 0.5);
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+  .linkedin_link a {
+    align-items: center;
+  }
+  
+  .linkedin_link img {
+    margin-left: 127px;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    display: block;
+  }
+  
+  .image {
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: rgb(255, 247, 174);
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 720px) {
+    .image,
+    .flip-box-front,
+    .flip-box-back,
+    .flip-box {
+      height: 270px;
+      width: 270px;
+    }
+  
+    .alumni_info {
+      font-size: 20px;
+    }
+    .linkedin_link img {
+      margin-left: 110px;
+    }
+  }
+  @media (max-width: 400px) {
+    .image,
+    .flip-box-front,
+    .flip-box-back,
+    .flip-box {
+      height: 220px;
+      width: 220px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    .linkedin_link img {
+      margin-left: 85px;
+      height: 50px;
+      width: 50px;
+    }
+  
+    .alumni_info {
+      font-size: 18px;
+    }
+  }
+  
+
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+
+
+.header-home {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(Hostel\ \(2\).png);
+}
+
+#title {
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+  color: rgb(155, 9, 9);
+  font-size: 60px;
+  font-weight: 700;
+}
+
+#name {
+  display: inline-block;
+  text-decoration: none;
+  color: gold;
+  font-size: 20px;
+  padding: 5px;
+  border: 3px ridge gold;
+  border-radius: 20px;
+}
+#name:hover {
+  color: rgb(4, 255, 0);
+  border-color: rgb(4, 255, 0);
+}
+#logopic img {
+  margin-top: 100px;
+  width: 65px;
+  height: 65px;
+}
+
+#follow {
+  text-decoration: none;
+  color: aliceblue;
+  transition: 0.6s ease;
+  font-size: 30px;
+}
+
+#follow:hover {
+  color: rgb(0, 255, 17);
+}
+
+#heading {
+  background-color:#033b69;
+  text-decoration: underline;
+  background-size: cover;
+  text-align: center;
+  font-weight: 400;
+  font-size: 35px;
+  color: rgb(255, 247, 174);
+  padding: 10px;
+}
+
+@media (max-width: 1200px) {
+  #name {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  #header {
+    height: 400px;
+  }
+  #name {
+    display: block;
+  }
+
+}
+
+
+
+@media (max-width: 700px) {
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .pic {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  #name {
+    font-size: 16px;
+  }
+  .pic {
+    max-width: 350px;
+  }
+  .img {
+    max-width: 200px;
+  }
+  #logopic img {
+    height: 45px;
+    width: 45px;
+  }
+}
